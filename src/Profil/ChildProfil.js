@@ -1,7 +1,7 @@
-import React,{Children} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-function ChildProfil({user,HandleName,Children}) {
+function ChildProfil({user,HandleName,children}) {
     return(
        <div>
            <h1>Checkpoint Props</h1>
@@ -14,14 +14,15 @@ function ChildProfil({user,HandleName,Children}) {
            <br/>
            <button onClick={()=>HandleName(user.fullName)}>Hello Dear User</button>
            <div>
-               {Children}
+               {children}
            </div>
        </div>
     )
+   
+}
     ChildProfil.propTypes={
         user:PropTypes.object.isRequired,
         HandleName:PropTypes.func
-    }
     
 }
 export default ChildProfil
